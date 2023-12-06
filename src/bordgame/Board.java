@@ -34,4 +34,12 @@ public class Board {
     public Piece piece(Position position) {
         return pieces[position.getRow()][position.getColumn()];
     }
+
+    public void placePiece(Piece piece, Position position) {
+        pieces [position.getRow()] [position.getColumn()] = piece; // pega a matriz na posição fornecida e atrib a peça
+        // Agora essa peça nao está mais na posição nula e sim na posição fornecida, então fazemos:
+        piece.position = position; // eu consigo acessar livremente pois á position é protected e está no mesmo pacote.
+        // essa matriz e a matriz criada na classe Board
+        // e que foi instanciada no construtor
+    }
 }
