@@ -13,4 +13,9 @@ public class King extends ChessPiece {
         return "K"; //K de king, no tabuleiro o rei sera representado por K
     }
 
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return mat;
+    }
 }
