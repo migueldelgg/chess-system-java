@@ -1,11 +1,11 @@
 package application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class UI {
 
@@ -30,7 +30,7 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-    //https://stackoverflow.com/questions/2979383/java-clear-the-console
+    // https://stackoverflow.com/questions/2979383/java-clear-the-console
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -49,16 +49,15 @@ public class UI {
     }
 
     public static void printBoard(ChessPiece[][] pieces) {
-        for (int i=0; i<pieces.length; i++) {
+        for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
-            for (int j=0; j<pieces.length; j++) {
+            for (int j = 0; j < pieces.length; j++) {
                 printPiece(pieces[i][j]);
             }
             System.out.println();
         }
         System.out.println("  a b c d e f g h");
     }
-
 
     private static void printPiece(ChessPiece piece) {
         if (piece == null) {
